@@ -1,0 +1,62 @@
+[
+    {
+      "id": "main",
+      "components": [
+        "section",
+        "tab"
+      ]
+    },
+    {
+      "id": "columns",
+      "components": []
+    },
+    {
+      "id": "column",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title"
+      ]
+    },
+    {
+      "id": "section",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title",
+        "hero",
+        "columns",
+        "carousel",
+        "accordion",
+        "teaser",
+        "featured-article",
+        "blockquote",
+        "article-details",
+        "content-fragment",
+        "demo-block",
+        "embed",
+        "workfront-reference",
+        "article-content-fragment"
+      ]
+    },
+    {
+      "id": "activity-details",
+      "components": [
+        "activity-detail"
+      ]
+    },
+    {
+      "id": "accordion",
+      "components": [
+        "accordion-item"
+      ]
+    },
+    {
+      "id": "carousel",
+      "components": [
+        "slide"
+      ]
+    }
+  ]

@@ -1,0 +1,389 @@
+/*
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
+
+ :root {
+  /* colors */
+  --color-yellow: #ffea00;
+  --link-color: black;
+  --link-hover-color: black;
+  --background-color: #fff;
+  --overlay-background-color: #eee;
+  --highlight-background-color: #ffc719;
+  --text-color: #202020;
+  --text-color-light: #ebebeb;
+  --heading-highlight-color: #ffea00;
+  --overlay-text-color: var(--text-color);
+  --highlight-text-color: var(--text-color);
+
+  /* fonts */
+  /* --body-font-family: 'Source Sans Pro', 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
+  --heading-font-family: asar, georgia, 'Times New Roman', times, serif;
+  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace; */
+  --body-font-family: adobe-clean-light, 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
+  --heading-font-family: adobe-clean-regular, 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
+  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+
+  /* body sizes */
+  --body-font-size-m: 22px;
+  --body-font-size-s: 18px;
+  --body-font-size-xs: 14px;
+
+  /* heading sizes */
+  --heading-font-size-xxl: 40px;
+  --heading-font-size-xl: 36px;
+  --heading-font-size-l: 32px;
+  --heading-font-size-m: 24px;
+  --heading-font-size-s: 20px;
+  --heading-font-size-xs: 18px;
+
+  /* nav height */
+  --nav-height: 115px;
+
+  /* buttons */
+  --button-background-color: var(--color-yellow);
+  --button-border-radius: 0;
+  --button-text-color: var(--text-color);
+  --button-padding: 1em 2.5em;
+
+  /* default content */
+  --default-text-align: left;
+}
+
+body {
+  font-size: var(--body-font-size-m);
+  margin: 0;
+  font-family: var(--body-font-family);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  display: none;
+}
+
+body.appear {
+  display: unset;
+}
+
+header {
+  height: calc(var(--nav-height));
+}
+
+main {
+  text-align: var(--default-text-align);
+}
+
+.hidden {
+  display: none;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-family: var(--heading-font-family);
+  font-weight: 400;
+  line-height: 1.25;
+  margin-top: 1em;
+  margin-bottom: .5em;
+  scroll-margin: calc(var(--nav-height) + 1em);
+}
+
+h1 {
+  font-weight: 400;
+  margin-top: 27px;
+  margin-bottom: 13.5px;
+  font-size: var(--heading-font-size-xxl);
+}
+
+body.activity h1::after {
+  display: block;
+  width: 84px;
+  padding-top: 8px;
+  content: "";
+  border-bottom: 2px solid var(--color-yellow);
+}
+
+body.article h2::after {
+  display: block;
+  width: 84px;
+  padding-top: 8px;
+  content: "";
+  border-bottom: 2px solid var(--heading-highlight-color);
+}
+
+h2 { font-size: var(--heading-font-size-xl) }
+h3 { font-size: var(--heading-font-size-l) }
+h4 { font-size: var(--heading-font-size-m) }
+h5 { font-size: var(--heading-font-size-s) }
+h6 { font-size: var(--heading-font-size-xs) }
+
+p, dl, ol, ul, pre, blockquote {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+body p {
+  margin: 0 0 13.5px;
+  font-size: 18px;
+  line-height: 2.5;
+}
+
+a:any-link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--link-hover-color);
+}
+
+code, pre, samp {
+  font-family: var(--fixed-font-family);
+  font-size: var(--body-font-size-s);
+}
+
+code, samp {
+  padding: .125em;
+}
+
+pre {
+  overflow: scroll;
+}
+
+/* buttons */
+
+a.button:any-link, button {
+  color: var(--button-text-color);
+  background-color: var(--button-background-color);
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: var(--button-padding);
+  font-weight: 600;
+  font-family: var(--body-font-family);
+  display: inline-block;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: 2px solid transparent;
+  text-align: center;
+  font-style: normal;
+  cursor: pointer;
+  margin: 16px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: var(--button-border-radius);
+  line-height: 1.5;
+}
+
+a.button:hover, a.button:focus, button:hover, button:focus  {
+  /* background-color: var(--link-hover-color); */
+  cursor: pointer;
+}
+
+button:disabled, button:disabled:hover {
+  /* background-color: var(--overlay-background-color); */
+  cursor: unset;
+}
+
+a.button.secondary, button.secondary {
+  background-color: unset;
+  border: 2px solid currentcolor;
+  color: unset;
+}
+
+body.activity main {
+  display: grid;
+  grid-template-columns: auto min(25%,300px) min(75%,900px) auto;
+  grid-template-areas:
+    "bread bread bread bread"
+    "hero hero hero hero"
+    "padleft left main padright";
+}
+
+body.activity main .section {
+  grid-area: main;
+}
+
+body.activity main .section:first-child {
+  grid-area: hero;
+}
+
+body.activity main .section:nth-child(2) {
+  grid-area: left;
+}
+
+main input {
+  font-size: 1.25rem;
+  width: 100%;
+  max-width: 50rem;
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.75rem 0.6rem;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+main input:hover {
+  border: 1px solid var(--text-color);
+}
+
+/* stylelint-disable no-descending-specificity */
+main .section {
+  padding: 64px 16px;
+}
+/* stylelint-enable no-descending-specificity */
+
+main pre {
+  background-color: var(--overlay-background-color);
+  padding: 1em;
+  border-radius: .25em;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+main blockquote {
+  color: var(--blockquote-color);
+  background-color: var(--blockquote-background-color);
+  font-family: var(--heading-font-family);
+  margin: 3rem;
+  text-indent: -1rem;
+  hanging-punctuation: first;
+}
+
+hr {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border: 0;
+  border-bottom: 1px solid var(--overlay-background-color);
+}
+
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+@media (min-width: 600px) {
+  main .section {
+    padding: 64px 32px;
+  }
+}
+
+@media (min-width: 900px) {
+  :root {
+    --heading-font-size-xxl: 40px;
+    --heading-font-size-xl: 36px;
+    --heading-font-size-l: 36px;
+    --heading-font-size-m: 30px;
+    --heading-font-size-s: 24px;
+    --heading-font-size-xs: 22px;
+  }
+
+  .section > div {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+@media (min-width: 1440px) {
+
+  .section > div {
+    max-width: 1440px;
+    margin: auto;
+  }
+}
+
+main .section.highlight {
+  background-color: var(--highlight-background-color);
+  color: var(--highlight-text-color);
+}
+
+main .section.overlay {
+  background-color: var(--overlay-background-color);
+  color: var(--highlight-text-color);
+}
+
+main .section.full-bleed {
+  padding: 0;
+}
+
+main .section.full-bleed > div {
+  max-width: unset;
+}
+
+.icon-wknd-logo-dk {
+  display: inline-block;
+  width:128px;
+  margin-top: 14px;
+  margin-bottom: 7px;
+}
+
+.icon-wknd-logo-light {
+  display: inline-block;
+  width:128px;
+  margin-top: 14px;
+  margin-bottom: 7px;
+}
+
+/* progressive section appearance */
+main .section[data-section-status='loading'],
+main .section[data-section-status='initialized'] {
+  display: none;
+}
+
+/* cookie consent styles */
+.cc-window.cc-banner.cc-theme-block {
+  padding: 12px 10px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+}
+
+.cc-highlight .cc-btn.cc-customize, .cc-policies-links.cc-link {
+  color: var(--highlight-text-color);
+}
+
+.cc-highlight .cc-btn+.cc-btn {
+  padding: 13px 29px;
+  background-color: var(--highlight-background-color);
+  color: var(--highlight-text-color);
+  text-transform: uppercase;
+  border-style: none;
+}
+
+.cc-btn.cc-save {
+  padding: 13px 29px;
+}
+
+.section.blockquote-container {
+  background: white;
+}
+
+
+.section.article-content-fragment-container {
+  background: white;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Experimentation Widget Styling */
+.hlx-preview-overlay .hlx-badge {
+  padding: 1rem 2rem;
+  font-size: 18px;
+  line-height: normal;
+}
+
+.hlx-preview-overlay .hlx-badge .hlx-popup * {
+  font-size: 14px;
+}

@@ -1,0 +1,111 @@
+/* block specific CSS goes here */
+
+  
+main .hero-container {
+    padding: 0;
+    background: transparent;
+    margin-bottom: 4rem;
+}
+  
+main .hero {
+    position: relative;
+    height: 600px;
+    padding: 0;    
+    color: var(--background-color);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+    z-index: 1;
+}
+
+main .hero .hero-body {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 1.5s ease-out;
+}
+
+main .hero .hero-body h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+main .hero .hero-body p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+main .hero picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+main .hero img {
+    object-fit: cover;
+    width: 100%;
+    transform: scale(1.02);
+    transition: transform 8s ease-out;
+    animation: slowZoom 20s ease-out infinite alternate;
+}
+
+.hero [data-align="center"] {
+    text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slowZoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main .hero .hero-body h1 {
+        font-size: 2.5rem;
+    }
+    
+    main .hero .hero-body p {
+        font-size: 1.1rem;
+    }
+}

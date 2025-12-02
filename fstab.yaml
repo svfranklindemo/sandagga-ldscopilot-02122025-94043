@@ -1,0 +1,5 @@
+mountpoints:
+  /:
+    url: https://author-p121371-e1189853.adobeaemcloud.com/bin/franklin.delivery/svfranklindemo/pbakliwal-xwalk-11032025-175733/main
+    type: markup
+    suffix: ".html?wcmmode=disabled"

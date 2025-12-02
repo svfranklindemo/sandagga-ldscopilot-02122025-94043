@@ -1,0 +1,57 @@
+/* stylelint-disable no-descending-specificity */
+.teaser {
+    display: grid;
+    grid-template-areas: "teaser";
+    align-items: end;
+    justify-items: center;
+}
+
+.teaser > div {
+    grid-area: teaser;
+}
+
+/* teaser image */
+.teaser > div:first-child {
+    width: 100%;
+}
+
+.teaser > div:first-child > div {
+    height: 40pc;
+    max-height: 40pc;
+    width: 100%;
+}
+
+/* teaser content */
+.teaser > div:last-child {
+    width: 75%;
+    background-color: #fff;
+    min-height: 180px;
+    padding: 0 28px;
+    font-size: 18px;
+    margin: 0;
+    line-height: 1.75;
+}
+
+.teaser picture {
+    width: 100%;
+    height: 100%;
+}
+
+.teaser img {
+    margin-top: 0;
+    margin-bottom: 0;
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    height: 100%;
+    max-height: 640px;
+}
+
+.teaser h2 {
+    font-family: var(--body-font-family);
+    margin: .5em 0;
+}
+
+.teaser h2 a {
+    color: #202020
+}
